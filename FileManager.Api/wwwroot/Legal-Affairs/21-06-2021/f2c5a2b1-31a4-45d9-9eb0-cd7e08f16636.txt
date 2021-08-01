@@ -1,0 +1,10 @@
+set no employee data page for tansfer asset from one employee to another
+
+in case of retirement  set employeeid in issued asset no employee and we can get it by location id
+
+
+add operation id to issued asset 
+
+add new page for transfer asset from employee to another ( no employee data )
+
+add operation drop down to it

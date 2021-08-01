@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FileManager.Api</name>
+    </assembly>
+    <members>
+        <member name="T:FileManager.Api.Controllers.Base.BaseController">
+            <inheritdoc />
+        </member>
+        <member name="M:FileManager.Api.Controllers.Base.BaseController.#ctor">
+            <inheritdoc />
+        </member>
+        <member name="T:FileManager.Api.Controllers.FilesController">
+            <summary>
+            App Controller
+            </summary>
+        </member>
+        <member name="M:FileManager.Api.Controllers.FilesController.#ctor(FileManager.Service.Services.File.IFileService,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:FileManager.Api.Controllers.FilesController.GetAsync(System.Int64)">
+            <summary>
+            Get By Id 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FileManager.Api.Controllers.FilesController.GetAllAsync">
+            <summary>
+            Get All 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FileManager.Api.Controllers.FilesController.DownloadAsync(System.Guid,System.String)">
+            <summary>
+            Download File
+            </summary>
+            <param name="id"></param>
+            <param name="appCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FileManager.Api.Controllers.FilesController.DownloadWithAppCodeAsync(System.Guid,System.String)">
+            <summary>
+            Download File
+            </summary>
+            <param name="id"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FileManager.Api.Controllers.FilesController.DownloadWithWaterMark(System.Guid,System.String)">
+            <summary>
+            Download File
+            </summary>
+            <param name="id"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FileManager.Api.Controllers.FilesController.GenerateTokenAsync(System.Collections.Generic.List{System.Guid})">
+            <summary>
+            Generate Token
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FileManager.Api.Controllers.FilesController.GenerateTokenWithClaimsAsync(System.Collections.Generic.List{System.Guid},System.String)">
+            <summary>
+            Generate Token With App Code
+            </summary>
+            <param name="ids"></param>
+            <param name="appCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FileManager.Api.Controllers.FilesController.UploadToSanStorageAsync(Microsoft.AspNetCore.Http.IFormFileCollection,FileManager.Entities.Enum.StorageType,System.Boolean,System.String)">
+            <summary>
+            Upload To San Storage
+            </summary>
+            <param name="files"></param>
+            <param name="storageType"></param>
+            <param name="isPublic"></param>
+            <param name="appCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FileManager.Api.Controllers.FilesController.GetDirectories(FileManager.Entities.Enum.StorageType)">
+            <summary>
+            List Current Path Directories
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FileManager.Api.Controllers.FilesController.DeleteAsync(System.Int64)">
+            <summary>
+            Remove  by id
+            </summary>
+            <param name="id">PK</param>
+            <returns></returns>
+        </member>
+        <member name="M:FileManager.Api.Controllers.FilesController.DeleteSoftAsync(System.Int64)">
+            <summary>
+            Soft Remove  by id
+            </summary>
+            <param name="id">PK</param>
+            <returns></returns>
+        </member>
+        <member name="T:FileManager.Api.Extensions.ConfigureExtension">
+            <summary>
+            Pipeline Extensions
+            </summary>
+        </member>
+        <member name="M:FileManager.Api.Extensions.ConfigureExtension.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            General Configuration Method
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FileManager.Api.Extensions.ConfigureExtension.ConfigureCors(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Configure Cors
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:FileManager.Api.Extensions.ConfigureExtension.CreateDatabase(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Create Database From Migration
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:FileManager.Api.Extensions.ConfigureExtension.SwaggerConfig(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            User Swagger
+            </summary>
+            <param name="app"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="T:FileManager.Api.Extensions.ConfigureServiceExtension">
+            <summary>
+            Dependency Extensions
+            </summary>
+        </member>
+        <member name="M:FileManager.Api.Extensions.ConfigureServiceExtension.RegisterServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Register Extensions
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FileManager.Api.Extensions.ConfigureServiceExtension.RegisterDatabaseConfig(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Database Config
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:FileManager.Api.Extensions.ConfigureServiceExtension.ConfigureAuthentication(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Configure Authentication With Identity Server
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:FileManager.Api.Extensions.ConfigureServiceExtension.RegisterAutoMapper(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            register auto-mapper
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:FileManager.Api.Extensions.ConfigureServiceExtension.RegisterCores(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Register Main Core
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:FileManager.Api.Program">
+            <summary>
+            Start Point
+            </summary>
+        </member>
+        <member name="P:FileManager.Api.Program.Configuration">
+            <summary>
+            Configuration Properties
+            </summary>
+        </member>
+        <member name="M:FileManager.Api.Program.Main(System.String[])">
+            <summary>
+            Entry Point
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:FileManager.Api.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Web Host Builder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FileManager.Api.Startup">
+            <summary>
+            Start Up Class
+            </summary>
+        </member>
+        <member name="M:FileManager.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:FileManager.Api.Startup.Configuration">
+            <summary>
+            Public Configuration Property
+            </summary>
+        </member>
+        <member name="M:FileManager.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configure Dependencies
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:FileManager.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Configure Pipeline
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
